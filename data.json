@@ -269,7 +269,7 @@
       "Physocarpus opulifolius 'Diabolo'®",
       "Physocarpus opulifolius 'Lady in Red'®",
       "Prunus cerasifera 'Nigra'",
-      "Prunus persica 'Melred'      "      "    CAC",
+      "Prunus persica 'Melred'",
       "Spiraea japonica 'Little Princess'",
       "Syringa vulg.'Andenken an Ludwig Späth'",
       "Tamarix parviflora",
@@ -279,8 +279,8 @@
       "Hydrangea petiolaris",
       "Ribes uva-crispa 'Hinnonmäki rot'",
       "Ribes rubrum 'Jonkheer van Tets'",
-      "Ribes nigrum 'Titania'-S-      "      "CAC",
-      "Ribes uva-crispa 'Karlin'      "      "  CAC",
+      "Ribes nigrum 'Titania'-S-",
+      "Ribes uva-crispa 'Karlin'",
       "Aristolochia macrophylla",
       "Clematis 'Dr. Ruppel'",
       "Clematis 'Comtesse de Bouchaud'",
@@ -372,7 +372,7 @@
       "Prunus lusitanica 'Angustifolia'",
       "Prunus serr. 'Kanzan'",
       "Quercus petraea fk. Agder",
-      "Salix caprea 'Kilmarnock'",
+      "Salix caprea 'Kilmarnock'"
     ],
     "questions": [
       "Størrelse?",
@@ -394,4 +394,4 @@
       "Dufter den?",
       "Kan den tåle skygge?"
     ]
-  }
+}
