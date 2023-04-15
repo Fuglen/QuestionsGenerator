@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="jquery-csv.js"></script>
 <head>
 <title>Page Title</title>
 </head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
 </body>
+<script>
+// plants = $.csv.toArray('E:/Documents/VSCode/QuestionsGenerator/Files/plants.csv')
+
+fetch('Files/plants.csv')
+  .then(response => response.text())
+  .then(data => {
+    // Parse CSV file using Papa Parse
+    const parsedData = Papa.parse(data, {header: true, skipEmptyLines: true});
+
+    // Get an array of plants
+    const plants = parsedData.data.map(row => row.plant);
+
+    // Get an array of questions
+    const questions = [
+      'Størrelse?',
+      'Hvornår beskære man?',
+      'Er den giftig?',
+      'Hvor hurtig vokser den?',
+      'Kan den klare vind?'
+    ];
+
+    // Get a random plant and question
+    const randomPlant = plants[Math.floor(Math.random() * plants.length)];
+    const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+
+    // Display the selected plant and question on the website
+    const plantElement = document.getElementById('plant');
+    plantElement.innerText = randomPlant;
+
+    const questionElement = document.getElementById('question');
+    questionElement.innerText = randomQuestion;
+
+    // Add a button to generate a new question
+    const buttonElement = document.getElementById('new-question');
+    buttonElement.addEventListener('click', () => {
+      const newRandomPlant = plants[Math.floor(Math.random() * plants.length)];
+      const newRandomQuestion = questions[Math.floor(Math.random() * questions.length)];
+
+      plantElement.innerText = newRandomPlant;
+      questionElement.innerText = newRandomQuestion;
+    });
+  });
+</script>
+
+<div>
+    <h1>Random plant question</h1>
+    <p>Plant: <span id="plant"></span></p>
+    <p>Question: <span id="question"></span></p>
+    <button id="new-question">New question</button>
+  </div>
 </html>

@@ -1,0 +1,24 @@
+{
+  "name": "questionsgenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fuglen/QuestionsGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fuglen/QuestionsGenerator/issues"
+  },
+  "homepage": "https://github.com/Fuglen/QuestionsGenerator#readme",
+  "dependencies": {
+    "csv-parse": "^5.3.6",
+    "jquery-csv": "^1.0.21"
+  }
+}
