@@ -10,25 +10,20 @@
 
 </body>
 <script>
-// plants = $.csv.toArray('E:/Documents/VSCode/QuestionsGenerator/Files/plants.csv')
+// Create a new XMLHttpRequest object
+const xhr = new XMLHttpRequest();
 
-fetch('Files/plants.csv')
-  .then(response => response.text())
-  .then(data => {
-    // Parse CSV file using Papa Parse
-    const parsedData = Papa.parse(data, {header: true, skipEmptyLines: true});
+// Set the file path and type
+xhr.open('GET', 'data.json');
+xhr.setRequestHeader('Content-Type', 'application/json');
 
-    // Get an array of plants
-    const plants = parsedData.data.map(row => row.plant);
-
-    // Get an array of questions
-    const questions = [
-      'Størrelse?',
-      'Hvornår beskære man?',
-      'Er den giftig?',
-      'Hvor hurtig vokser den?',
-      'Kan den klare vind?'
-    ];
+// When the file has loaded
+xhr.onload = () => {
+  if (xhr.status === 200) {
+    // Parse the JSON data
+    const data = JSON.parse(xhr.responseText);
+    const plants = data.plants;
+    const questions = data.questions;
 
     // Get a random plant and question
     const randomPlant = plants[Math.floor(Math.random() * plants.length)];
@@ -36,7 +31,7 @@ fetch('Files/plants.csv')
 
     // Display the selected plant and question on the website
     const plantElement = document.getElementById('plant');
-    plantElement.innerText = randomPlant;
+    plantElement.innerText = randomPlant.name;
 
     const questionElement = document.getElementById('question');
     questionElement.innerText = randomQuestion;
@@ -47,10 +42,16 @@ fetch('Files/plants.csv')
       const newRandomPlant = plants[Math.floor(Math.random() * plants.length)];
       const newRandomQuestion = questions[Math.floor(Math.random() * questions.length)];
 
-      plantElement.innerText = newRandomPlant;
+      plantElement.innerText = newRandomPlant.name;
       questionElement.innerText = newRandomQuestion;
     });
-  });
+  } else {
+    console.error(xhr.statusText);
+  }
+};
+
+// Send the request
+xhr.send();
 </script>
 
 <div>

@@ -1,0 +1,20 @@
+{
+    "plants": [
+      {
+        "name": "ALLIUM afl. 'Purple Sensation'"
+      },
+      {
+        "name": "SEDUM spectabile 'Brillant'"
+      },
+      {
+        "name": "NEPETA faassenii 'Cat's Pajamas'®"
+      }
+    ],
+    "questions": [
+      "Størrelse?",
+      "Hvornår beskære man?",
+      "Er den giftig?",
+      "Hvor hurtig vokser den?",
+      "Kan den klare vind?"
+    ]
+  }
