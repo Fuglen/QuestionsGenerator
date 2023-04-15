@@ -42,7 +42,7 @@ xhr.onload = () => {
       const newRandomPlant = plants[Math.floor(Math.random() * plants.length)];
       const newRandomQuestion = questions[Math.floor(Math.random() * questions.length)];
 
-      plantElement.innerText = newRandomPlant.name;
+      plantElement.innerText = newRandomPlant;
       questionElement.innerText = newRandomQuestion;
     });
   } else {
