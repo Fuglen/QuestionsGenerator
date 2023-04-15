@@ -71,20 +71,22 @@ xhr.onload = () => {
 
     // Get a random plant and question
     const randomPlant = plants[Math.floor(Math.random() * plants.length)];
-    const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+    const randomQuestion1 = questions[Math.floor(Math.random() * questions.length)];
+    const randomQuestion2 = questions[Math.floor(Math.random() * questions.length)];
+    const randomQuestion3 = questions[Math.floor(Math.random() * questions.length)];
 
     // Display the selected plant and question on the website
     const plantElement = document.getElementById('plant');
     plantElement.innerText = randomPlant.name;
 
-    const question1Element = document.getElementById('question');
-    question1Element.innerText = randomQuestion;
+    const question1Element = document.getElementById('question1');
+    question1Element.innerText = randomQuestion1;
 
-    const question2Element = document.getElementById('question');
-    question2Element.innerText = randomQuestion;
+    const question2Element = document.getElementById('question2');
+    question2Element.innerText = randomQuestion2;
 
-    const question3Element = document.getElementById('question');
-    question3Element.innerText = randomQuestion;
+    const question3Element = document.getElementById('question3');
+    question3Element.innerText = randomQuestion3;
 
     // Add a button to generate a new question
     const buttonElement = document.getElementById('new-question');
