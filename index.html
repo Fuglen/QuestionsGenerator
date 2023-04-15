@@ -71,6 +71,13 @@ xhr.onload = () => {
 
     // Get a random plant and question
     const randomPlant = plants[Math.floor(Math.random() * plants.length)];
+    var arr = [];
+      while(arr.length < 3) {
+        var r = Math.floor(Math.random() * questions.length);
+        if(!arr.includes(r)) {
+          if(arr.indexOf(r) === -1) arr.push(r);
+        }
+      }
     const randomQuestion1 = questions[Math.floor(Math.random() * questions.length)];
     const randomQuestion2 = questions[Math.floor(Math.random() * questions.length)];
     const randomQuestion3 = questions[Math.floor(Math.random() * questions.length)];
@@ -92,14 +99,22 @@ xhr.onload = () => {
     const buttonElement = document.getElementById('new-question');
     buttonElement.addEventListener('click', () => {
       const newRandomPlant = plants[Math.floor(Math.random() * plants.length)];
-      const newRandomQuestion1 = questions[Math.floor(Math.random() * questions.length)];
-      const newRandomQuestion2 = questions[Math.floor(Math.random() * questions.length)];
-      const newRandomQuestion3 = questions[Math.floor(Math.random() * questions.length)];
+      var arr = [];
+      while(arr.length < 3) {
+        var r = Math.floor(Math.random() * questions.length);
+        if(!arr.includes(r)) {
+          if(arr.indexOf(r) === -1) arr.push(r);
+        }
+      }
+
+      // const newRandomQuestion1 = questions[Math.floor(Math.random() * questions.length)];
+      // const newRandomQuestion2 = questions[Math.floor(Math.random() * questions.length)];
+      // const newRandomQuestion3 = questions[Math.floor(Math.random() * questions.length)];
 
       plantElement.innerText = newRandomPlant;
-      question1Element.innerText = newRandomQuestion1;
-      question2Element.innerText = newRandomQuestion2;
-      question3Element.innerText = newRandomQuestion3;
+      question1Element.innerText = questions[arr[0]];
+      question2Element.innerText = questions[arr[1]];
+      question3Element.innerText = questions[arr[2]];
     });
   } else {
     console.error(xhr.statusText);
