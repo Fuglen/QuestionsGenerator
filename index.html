@@ -4,7 +4,53 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="jquery-csv.js"></script>
 <head>
-<title>Page Title</title>
+<title>Random Plant Questions</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #345995;
+    }
+    p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    #plant {
+      font-size: 24px;
+      font-weight: bold;
+      color: #345995;
+    }
+    #question {
+      color: #666;
+    }
+    button {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #345995;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #4b7cb0;
+    }
+  </style>
 </head>
 <body>
 
@@ -54,10 +100,10 @@ xhr.onload = () => {
 xhr.send();
 </script>
 
-<div>
-    <h1>Random plant question</h1>
-    <p>Plant: <span id="plant"></span></p>
-    <p>Question: <span id="question"></span></p>
+  <div>
+    <h1>Random Plant Questions</h1>
+    <p><span id="plant"></span></p>
+    <p><span id="question"></span></p>
     <button id="new-question">New question</button>
   </div>
 </html>
