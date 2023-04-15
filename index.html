@@ -3,9 +3,18 @@
 <head>
 <title>Random Plant Questions</title>
 <style>
-    body {
+  body {
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
+    }
+    @media (max-width: 768px) {
+      body {
+        background-size: contain;
+      }
     }
     .container {
       max-width: 600px;
