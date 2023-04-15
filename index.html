@@ -77,17 +77,27 @@ xhr.onload = () => {
     const plantElement = document.getElementById('plant');
     plantElement.innerText = randomPlant.name;
 
-    const questionElement = document.getElementById('question');
-    questionElement.innerText = randomQuestion;
+    const question1Element = document.getElementById('question');
+    question1Element.innerText = randomQuestion;
+
+    const question2Element = document.getElementById('question');
+    question2Element.innerText = randomQuestion;
+
+    const question3Element = document.getElementById('question');
+    question3Element.innerText = randomQuestion;
 
     // Add a button to generate a new question
     const buttonElement = document.getElementById('new-question');
     buttonElement.addEventListener('click', () => {
       const newRandomPlant = plants[Math.floor(Math.random() * plants.length)];
-      const newRandomQuestion = questions[Math.floor(Math.random() * questions.length)];
+      const newRandomQuestion1 = questions[Math.floor(Math.random() * questions.length)];
+      const newRandomQuestion2 = questions[Math.floor(Math.random() * questions.length)];
+      const newRandomQuestion3 = questions[Math.floor(Math.random() * questions.length)];
 
       plantElement.innerText = newRandomPlant;
-      questionElement.innerText = newRandomQuestion;
+      question1Element.innerText = newRandomQuestion1;
+      question2Element.innerText = newRandomQuestion2;
+      question3Element.innerText = newRandomQuestion3;
     });
   } else {
     console.error(xhr.statusText);
@@ -101,7 +111,9 @@ xhr.send();
   <div>
     <h1>Random Plant Questions</h1>
     <p><span id="plant"></span></p>
-    <p><span id="question"></span></p>
+    <p><span id="question1"></span></p>
+    <p><span id="question2"></span></p>
+    <p><span id="question3"></span></p>
     <button id="new-question">New question</button>
   </div>
 </html>
